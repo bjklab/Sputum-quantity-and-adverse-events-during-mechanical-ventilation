@@ -159,7 +159,7 @@ We determined the necessary sample size by specifying the desired precision with
 We organized data with R statistical software version 3.6.1 and generated plots using the “ggplot2” package [@R_Core_Team2018-xo]. We evaluated potential confounders by comparing clinical variables of interest across exposure groups (high versus low frequency of subglottic suction at onset of mechanical ventilation) using Wilcoxon rank-sum testing (continuous variables) and Fisher’s exact test (categorical variables). For the primary analysis, we performed Bayesian multilevel logistic regression with random, subject-level slopes and intercepts. Like like conditional logistic regression, this approach accounts for subject-level strata in the case-crossover design [@Maclure1991-kj; @Maclure2000-cx; @Hosmer2013-xj; @Rice2008-lo]. To permit partial pooling of parameter estimates and rigorous evaluation of model fit, Bayesian models were fit using Stan Hamiltonian Monte Carlo (HMC) version 2.19 via the "rethinking", "rstan", and "brms" packages [@Burkner2017-yr; @Carpenter2017-ec; @McElreath2016-sf]. Models were fit with 4 chains of 2000 iterations, then confirmed with HMC diagnostics (no divergent iterations, no iterations saturating maximum tree depth, Rhat statistic < 1.1 for all parameters, and E-BFMI > 0.2), and by examining the posterior distributions [@Gabry2019-le]. We characterized posterior credibility intervals and type S error [@Gelman2000-ih].          
   
 #### Availability of Data  
-Data, model code, and code used to produce the figures is available at github.com/bjkellyio.  
+Data, model code, and code used to produce the figures is available at https://github.com/bjklab/Sputum-quantity-and-adverse-events-during-mechanical-ventilation.  
   
   
   
