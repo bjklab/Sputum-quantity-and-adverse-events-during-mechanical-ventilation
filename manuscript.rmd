@@ -65,7 +65,7 @@ Hatem Abdallah (1), Melanie F. Weingart, MD (3), Risa Fuller, MD (4), David Pegu
 2 - Department of Biostatistics, Epidemiology, and Informatics;  
 Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA;  
 3 - Department of Medicine, University of Colorado, Aurora, CO;  
-4 - Division of Infectious Diseases, Mount Sinai School of Medicine, New York, NY  
+4 - Division of Infectious Disease, Department of Medicine, Icahn School of Medicine at Mount Sinai, New York, NY  
   
 ## Corresponding Author Contact  
 Brendan J. Kelly, MD, MS - brendank@pennmedicine.upenn.edu  
@@ -133,7 +133,7 @@ Sputum production is a physical examination finding that is often used in the cl
 \newpage
 <P style = "page-break-before: always">
   
-### Materials and Methods  
+### Materials & Methods  
 #### Study Design  
 We performed a case-crossover study to define the relationship between the quantity of sputum production (primary exposure), measured as the frequency with which nurses and respiratory therapists chose to perform as-needed subglottic suctioning, and the occurrence of VAE (primary outcome). We also analyzed whether VAE were categorized as VAC without suspected infection or as IVAC. For the primary anlysis, the day of VAE was the case period; the days prior to VAE were the control periods.   
   
@@ -715,6 +715,10 @@ The relationship between sputum quantity and VAE is of interest because sputum q
 Several limitations of our study must be noted. The case-crossover design was chosen because VAE are rare outcomes, and the exposure of interest -- sputum quantity -- is dynamic and most likely to impact VAE risk acutely. However, our exclusive focus on VAE cases leaves open important questions about the generalizability of our findings across the broader population of patients who depend upon mechanical ventilation. Likewise, our cohort was enrolled from the medical intensive care unit of a single, academic medical center. Sputum quantity may differ significantly in surgical, neurological, or pediatric intensive care patients, and practices for management of tracheal secretions may differ across institutions. Our findings must be validated with studies of sputum quantity across a broader population of patients dependent on mechanical ventilation.   
   
 Nevertheless, our study demonstrates a significant, positive association between subglottic suction events and VAE risk, supporting the validity of subglottic suction frequency ascertained from electronic medical records as a means to quantify sputum production. The relationships between the respiratory tract microbiome, lung immune activation, and sputum production during mechanical ventilation warrant further study, as does the impact of sputum production on clinical behavior. The frequency of subglottic suction events appears to serve as a valuable marker of sputum quantity for these future analyses.  
+  
+### Conclusions  
+The frequency of subglottic suction events, which are performed on an as-needed basis for patients dependent on mechanical ventilation, may serve as a valuable marker of sputum quantity, which is associated with risk for risk for adverse ventilator-associated events (VAE). However, the relationship between subglottic suction events, sputum quantity, and VAE must be validated in a broader population of mechanically ventilated patients and intensive care settings.  
+  
   
   
 
