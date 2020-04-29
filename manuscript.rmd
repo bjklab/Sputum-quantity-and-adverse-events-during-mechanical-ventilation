@@ -135,7 +135,7 @@ Sputum production is a physical examination finding that is often used in the cl
   
 ### Materials & Methods  
 #### Study Design  
-We performed a case-crossover study to define the relationship between the quantity of sputum production (primary exposure), measured as the frequency with which nurses and respiratory therapists chose to perform as-needed subglottic suctioning, and the occurrence of VAE (primary outcome). We also analyzed whether VAE were categorized as VAC without suspected infection or as IVAC. For the primary anlysis, the day of VAE was the case period; the days prior to VAE were the control periods.   
+We performed a case-crossover study to define the relationship between the quantity of sputum production (primary exposure), measured as the frequency with which nurses and respiratory therapists chose to perform as-needed subglottic suctioning, and the occurrence of VAE (primary outcome). We also analyzed whether VAE were categorized as VAC without suspected infection or as IVAC. For the primary analysis, the day of VAE was the case period; the days prior to VAE were the control periods.   
   
 #### Study Setting    
 We evaluated 90 consecutive VAE that occurred across 87 unique subjects, over 3.5 years in the medical intensive care unit (MICU) of the Hospital of the University of Pennsylvania (HUP), a tertiary academic medical center. All patients who depend on mechanical ventilation at HUP were monitored for VAE, and all VAE were reported to NHSN. VAC and IVAC were captured by review of HUP NHSN reporting records. The study was approved by the University of Pennsylvania Institutional Review Board (protocol #824613).  
