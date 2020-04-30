@@ -736,7 +736,8 @@ t1_ss1
 
 ```
 
-#### Table 1. Comparison of clinical characteristics among subjects high or low sputum production at onset of mechanical ventilation. Categorical variables are described as number (%); continuous variables are described as median (IQR). Categorical variables are compared with chi-square test or Fisher's exact test; continuous variables are compared with Wilcoxon rank-sum test.  				
+#### Table 1. Comparison of clinical characteristics among subjects high or low sputum production at onset of mechanical ventilation.  
+Categorical variables are described as number (%); continuous variables are described as median (IQR). Categorical variables are compared with chi-square test or Fisher's exact test; continuous variables are compared with Wilcoxon rank-sum test.  				
   
   
   
@@ -803,8 +804,8 @@ knitr::include_graphics(path = "./figs/supplement/p_ivac_vs_vac_explore.svg")
 ```
 
   
-Supplemental Figure 2. Exploratory analyses of clinical variables that discriminate IVAC and VAC suggest a role for AST, ALT, number of pressors, and number of antibiotics.  
-The association between the sum of AST and ALT and probability of IVAC versus VAC are shown, stratied by number of pressors and number of antibiotics. Best estimates of the associations are represented with a dark line, surrounded by bands of posterior certainty.  
+#### Supplemental Figure 2. Exploratory analyses of clinical variables that discriminate IVAC and VAC suggest a role for AST, ALT, number of pressors, and number of antibiotics.   
+The association between the sum of AST and ALT and probability of IVAC versus VAC are shown, stratified by number of pressors and number of antibiotics. Best estimates of the associations are represented with a dark line, surrounded by bands of posterior certainty.  
   
   
 #### Supplemental Figure 3  
