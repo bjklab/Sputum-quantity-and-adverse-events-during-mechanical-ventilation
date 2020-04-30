@@ -200,7 +200,7 @@ m_culture_ss_fever_subject_brms %>%
         plot.title = element_text(size = 11),
         strip.background = element_blank(),
         plot.title.position = "plot") +
-  labs(x = "Subglottic Suction Events",
+  labs(x = "24-Hour Subglottic Suction Events",
        y = "Probability of Sputum Culture Order"#,
        #colour = "",
        #title = "Predicted VAC Probability ~ Daily Subglottic Suction Events"#,
