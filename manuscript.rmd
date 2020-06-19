@@ -1,7 +1,7 @@
 ---
 output: html_document
 bibliography: bib/bibliography.bib
-csl: csl/peerj.csl
+csl: csl/infection-control-and-hospital-epidemiology.csl
 css: style_helvetica_double.css
 ---
 
@@ -52,10 +52,10 @@ source("./scripts/m_culture_model.R")
 
   
 ## Title  
-Sputum quantity and adverse events during mechanical ventilation      
+Subglottic suction frequency and adverse events during mechanical ventilation      
   
 ## Abbreviated Title  
-Sputum and ventilator-associated complications  
+Subglottic suction and ventilator-associated complications  
   
 ## Authors  
 Hatem Abdallah (1), Melanie F. Weingart, MD (3), Risa Fuller, MD (4), David Pegues, MD (1), Rebecca Fitzpatrick, DNP (1), Brendan J. Kelly, MD, MS (1,2)  
@@ -79,10 +79,7 @@ RF - data collection; manuscript preparation;
 BJK - data collection; data analysis; manuscript preparation  
   
 ## Acknowledgements  
-BJK is supported by the National Institute for Allergy and Infectious Diseases (K23 AI121485 and L30 AI120149), as well as Centers for Disease Control and Prevention (CDC) contract awards (BAA 200-2016-91964 and 200-2018-02919). BJK and DP are supported by the CDC Healthcare-Associated Infection Prevention Epicenters Program (U54CK000485).    
-  
-## Disclosures  
-The authors report no relevant disclosures.  
+BJK is supported by the National Institute for Allergy and Infectious Diseases (K23 AI121485 and L30 AI120149), as well as Centers for Disease Control and Prevention (CDC) contract awards (BAA 200-2016-91964 and 200-2018-02919). BJK and DP are supported by the CDC Healthcare-Associated Infection Prevention Epicenters Program (U54CK000485). All authors report no conflicts of interest relevant to this article. There are no relevant disclosures.  
   
 ## Data Availability  
 Deidentified data, as well as analysis scripts and model code are available at github.com/bjkellyio.  
@@ -99,17 +96,23 @@ ventilator-associated complications, ventilator-associated pneumonia, subglottic
   
 ### Abstract  
   
-#### Background  
-Tracheal intubation and mechanical ventilation provide essential support for patients with respiratory failure, but the course of mechanical ventilation may be complicated by adverse events. The Center for Disease Control and Prevention (CDC)'s surveillance definitions of adverse ventilator-associated events (VAE) categorize events as infection-associated or not. We sought to understand how the quantity of sputum produced by mechanically ventilated patients relates to the onset of VAE and whether VAE are categorized as infection-associated or not.  
+#### Objective  
+Tracheal intubation and mechanical ventilation provide essential support for patients with respiratory failure, but the course of mechanical ventilation may be complicated by adverse ventilator-associated events (VAE). VAE may be infection-associated or not. We sought to understand how the frequency of subglottic suction, an indicator of the quantity of sputum produced by ventilated patients, relates to onset of all VAE and infection-associated VAE.  
+  
+#### Design
+We performed a case-crossover study including 87 patients with VAE and evaluated 848 days in the pre-VAE period at risk for VAE.  
+  
+#### Setting & Participants  
+Subjects were recruited from the medical intensive care unit of an academic medical center.  
   
 #### Methods  
-We performed a case-crossover study including 87 patients with VAE and evaluated 848 days in the pre-VAE period at risk for VAE. Sputum quantity at time of VAE and in the immediate pre-VAE period was compared to sputum quantity in the preceding period. We used the number of as-needed subglottic suctioning events performed per calendar day to quantify sputum production. We used CDC surveillance definitions for VAE and to categorize whether events were infection-associated or not.  
+We used the number of as-needed subglottic suctioning events performed per calendar day to quantify sputum production and compared the immediate pre-VAE period to the preceding period. We used CDC surveillance definitions for VAE and to categorize whether events were infection-associated or not.  
   
 #### Results  
-Sputum quantity is greater in the period immediately prior to VAE, compared to the preceding period. However, sputum quantity does not discriminate well between VAE that are categorized as infection-associated and VAE that are not.  
+Sputum quantity measured by subglottic suction frequency is greater in the period immediately prior to VAE, compared to the preceding period. However, it does not discriminate well between infection-associated VAE and VAE without associated infection.  
   
 #### Conclusions  
-Subglottic suction frequency may serve as a valuable marker of sputum quantity, which is associated with risk for VAE. However, our results require validation in a broader population of mechanically ventilated patients and intensive care settings.  
+Subglottic suction frequency may serve as a valuable marker of sputum quantity, and is associated with risk for VAE. However, our results require validation in a broader population of mechanically ventilated patients and intensive care settings.  
   
   
 
@@ -121,11 +124,9 @@ Subglottic suction frequency may serve as a valuable marker of sputum quantity, 
 ### Introduction  
 Tracheal intubation and mechanical ventilation are life-saving interventions to address respiratory failure, but adverse events occur during the course of mechanical ventilation that can result in prolonged critical illness and increased risk of death. Traditional surveillance focused on infectious causes of adverse events, particularly ventilator-associated lower respiratory tract infection (VA-LRTI), including ventilator-associated pneumonia and tracheobronchitis. But other adverse events, such as congestive heart failure or septic shock, can also result in the need for increased ventilator support.  
   
-In 2013, the Centers for Disease Control and Prevention (CDC)'s National Healthcare Safety Network (NHSN) implemented a new surveillance strategy for adverse ventilator-associated events (VAE), which advanced a broader, objective definition of ventilator-associated complications (VAC) [@Klompas2013-tj; @Magill2013-kw; @Magill2014-xi]. VAC are now defined as an increase of daily minimum positive end-expiratory pressure (PEEP) of at least 3cm H2O or an increase in daily minimum fraction of inspired oxygen (FiO2) by at least 20%, after at least two calendar days of stable or decreasing requirements. There are three tiers of VAC: (1) VAC without signs of infection; infection-associated VAC (IVAC), which are accompanied by leukocytosis/leukopenia or fever/hypothermia, as well as altered antibiotic treatment; and (3) possible ventilator-associated pneumonia (PVAP), which are IVAC with sputum studies suggestive of VA-LRTI. The NHSN definitions of VAE are well validated to predict ventilator-associated morbidity and mortality [@Kobayashi2017-ue; @Meagher2019-py]. VAE criteria also form the basis for promising, novel antimicrobial stewardship strategies [@Klompas2017-bw].  
-   
-However, current VAE surveillance definitions of VAE capture a different population than clinically defined VA-LRTI, which are typically diagnosed by physical examination, laboratory test results, and radiographic findings, as well as microbiologic test results [@Fan2016-np; @Klompas2014-uv; @Ramirez-Estrada2018-bf; @Stevens2014-zg]. More than 50% of VA-LRTI defined by clinical, laboratory, and radiographic findings fail to meet VAE criteria [@Klompas2019-tt]. The best validated interventions to reduce VAE involve minimizing sedation and careful monitoring of volume status, rather than interventions specifically targeted to infection prevention [@Cocoros2016-md; @Lewis2014-of; @Klompas2015-nj; @Klompas2015-lh; @Rello2019-jl; @Liu2019-fm; @Vaewpanich2019-dr].  
+In 2013, the Centers for Disease Control and Prevention (CDC)'s National Healthcare Safety Network (NHSN) implemented a new surveillance strategy for adverse ventilator-associated events (VAE), which advanced a broader, objective definition of ventilator-associated complications (VAC) [@Klompas2013-tj; @Magill2013-kw; @Magill2014-xi]. There are three tiers of VAC: (1) VAC without signs of infection; infection-associated VAC (IVAC), which are accompanied by leukocytosis/leukopenia or fever/hypothermia, as well as altered antibiotic treatment; and (3) possible ventilator-associated pneumonia (PVAP), which are IVAC with sputum studies suggestive of VA-LRTI. The NHSN definitions of VAE are well validated to predict ventilator-associated morbidity and mortality [@Kobayashi2017-ue; @Meagher2019-py; @Klompas2017-bw]. However, current VAE surveillance definitions capture a different population than clinically defined VA-LRTI, which are typically diagnosed by physical examination findings such as sputum production, laboratory test results, radiographic findings, and microbiologic test results [@Fan2016-np; @Klompas2014-uv; @Ramirez-Estrada2018-bf; @Stevens2014-zg; @Klompas2019-tt; @Cocoros2016-md; @Lewis2014-of; @Klompas2015-nj; @Klompas2015-lh; @Rello2019-jl; @Liu2019-fm; @Vaewpanich2019-dr].  
   
-Sputum production is a physical examination finding that is often used in the clinical diagnosis of VA-LRTI, but its relationship to VAE defined by CDC NHSN criteria is unknown. It is challenging to quantify sputum production, but a marker of sputum production is the frequency with which subglottic suction is performed. Subglottic suction is a procedure performed on an as-needed basis by nurses, respiratory therapists, and physicians to clear lower airway secretions [@Caroff2016-ef]. We sought to evaluate the relationship between the quantity of sputum produced and VAE. Specifically, we sought to define how sputum quantity at the time of VAE relates to sputum quantity before VAE, and to define whether sputum quantity discriminates between VAC and IVAC/VAP, using the frequency of subglottic suction events as a measure of sputum quantity. Here we report the results of a case-crossover study designed to address these questions.   
+Sputum production is a physical examination finding that is often used in the clinical diagnosis of VA-LRTI, but its relationship to VAE defined by CDC NHSN criteria is unknown. It is challenging to quantify sputum production during mechanical ventilation, but an indicator of sputum production is the frequency with which subglottic suction is performed. Subglottic suction is a procedure performed on an as-needed basis by nurses, respiratory therapists, and physicians to clear lower airway secretions via the endotracheal tube and reduce the risk of VA-LRTI [@Damas2015-vx; @Caroff2016-ef; @Mao2016-ys]. We sought to evaluate the relationship between the quantity of sputum produced, measured by the frequency of subglottic suctioning, and VAE. Specifically, we sought to define how subglottic suction frequency in the immediate pre-VAE period relates to subglottic suction frequency in the preceding period, and to define whether sputum quantity measured by subglottic suction frequency discriminates between VAC and IVAC/VAP. Here we report the results of a case-crossover study designed to address these questions.   
   
   
   
@@ -135,7 +136,7 @@ Sputum production is a physical examination finding that is often used in the cl
   
 ### Materials & Methods  
 #### Study Design  
-We performed a case-crossover study to define the relationship between the quantity of sputum production (primary exposure), measured as the frequency with which nurses and respiratory therapists chose to perform as-needed subglottic suctioning, and the occurrence of VAE (primary outcome). We also analyzed whether VAE were categorized as VAC without suspected infection or as IVAC. For the primary analysis, the day of VAE was the case period; the days prior to VAE were the control periods.   
+We performed a case-crossover study to define the relationship between the quantity of sputum production (primary exposure), measured as the frequency with which nurses and respiratory therapists chose to perform as-needed subglottic suctioning, and the occurrence of VAE (primary outcome). We also analyzed whether VAE were categorized as VAC without suspected infection or as IVAC/PVAP. For the primary analysis, the day of VAE served as the case period. The days prior to VAE during which subjects could have been diagnosed with VAE (i.e., after at least two days of stable or decreasing positive end-expiratory pressure (PEEP) and fraction of inspired oxygen (FiO2) requirements) served as the control period.   
   
 #### Study Setting    
 We evaluated 90 consecutive VAE that occurred across 87 unique subjects, over 3.5 years in the medical intensive care unit (MICU) of the Hospital of the University of Pennsylvania (HUP), a tertiary academic medical center. All patients who depend on mechanical ventilation at HUP were monitored for VAE, and all VAE were reported to NHSN. VAC and IVAC were captured by review of HUP NHSN reporting records. The study was approved by the University of Pennsylvania Institutional Review Board (protocol #824613) with a waiver of informed consent.  
@@ -159,7 +160,7 @@ We determined the necessary sample size by specifying the desired precision with
 We organized data with R statistical software version 3.6.1 and generated plots using the “ggplot2” package [@R_Core_Team2018-xo]. We evaluated potential confounders by comparing clinical variables of interest across exposure groups (high versus low frequency of subglottic suction at onset of mechanical ventilation) using Wilcoxon rank-sum testing (continuous variables) and Fisher’s exact test (categorical variables). For the primary analysis, we performed Bayesian multilevel logistic regression with random, subject-level slopes and intercepts. Like like conditional logistic regression, this approach accounts for subject-level strata in the case-crossover design [@Maclure1991-kj; @Maclure2000-cx; @Hosmer2013-xj; @Rice2008-lo]. To permit partial pooling of parameter estimates and rigorous evaluation of model fit, Bayesian models were fit using Stan Hamiltonian Monte Carlo (HMC) version 2.19 via the "rethinking", "rstan", and "brms" packages [@Burkner2017-yr; @Carpenter2017-ec; @McElreath2016-sf]. Models were fit with 4 chains of 2000 iterations, then confirmed with HMC diagnostics (no divergent iterations, no iterations saturating maximum tree depth, Rhat statistic < 1.1 for all parameters, and E-BFMI > 0.2), and by examining the posterior distributions [@Gabry2019-le]. We characterized posterior credibility intervals and type S error [@Gelman2000-ih].          
   
 #### Availability of Data  
-Data, model code, and code used to produce the figures are available at https://github.com/bjklab/Sputum-quantity-and-adverse-events-during-mechanical-ventilation.  
+Data, model code, and code used to produce the figures are available at https://github.com/bjklab/Subglottic-suction-frequency-and-adverse-events-during-mechanical-ventilation.  
   
   
   
@@ -615,7 +616,7 @@ pvap_sameday_5_15 %>%
 ```
   
   
-#### Sputum quantity increases prior to VAE.  
+#### Sputum quantity increases in the immediate pre-VAE period.  
 Among the 87 included subjects, we evaluated 848 ventilator-days at risk for VAE (i.e., not including the first two days of mechanical ventilation). Though sputum quantity at onset of mechanical ventilation was not associated with time to VAE, we did observe an association between increased subglottic suction events and increased risk of both VAC and IVAC. Figure 1 shows the predicted probability of VAC or IVAC based on the number of observed subglottic suction events.  With subglottic suctioning at 10 versus 5 events over a 24-hour period, the absolute probability of VAC increases by `r vac_5_10_pp_dif` (`r vac_5_10_pp_dif_type_s`) the same day, `r vac_5_10_next_pp_dif` (`r vac_5_10_next_pp_dif_type_s`) the next day, and `r vac_5_10_nextnext_pp_dif` (`r vac_5_10_nextnext_pp_dif_type_s`) the day after. With subglottic suctioning at 10 versus 5 events over a 24-hour period, the absolute IVAC probability by `r ivac_5_10_pp_dif` (`r ivac_5_10_pp_dif_type_s`) the same day, `r ivac_5_10_next_pp_dif` (`r vac_5_10_next_pp_dif_type_s`) increased risk of IVAC the next day, and `r ivac_5_10_nextnext_pp_dif` (`r vac_5_10_nextnext_pp_dif_type_s`) the day after. We also evaluated the impact of 15 versus 5 subglottic suction events over a 24-hour period and found VAC probability increases by `r vac_5_15_pp_dif` (`r vac_5_15_pp_dif_type_s`) the same day, `r vac_5_15_next_pp_dif` (`r vac_5_15_next_pp_dif_type_s`) the next day, and `r vac_5_15_nextnext_pp_dif` (`r vac_5_15_nextnext_pp_dif_type_s`) two days later; with the same increase, IVAC probability increases by `r ivac_5_15_pp_dif` (`r ivac_5_15_pp_dif_type_s`) the same day, `r ivac_5_15_next_pp_dif` (`r ivac_5_15_next_pp_dif_type_s`) the next day, and `r ivac_5_15_nextnext_pp_dif` (`r ivac_5_15_nextnext_pp_dif_type_s`) two days later. Given the small number of observed PVAP events, posterior credibility intervals were wide. But a positive relationship was observed between subglottic suction events and same-day PVAP risk, which increases by `r pvap_5_10_pp_dif` (`r pvap_5_10_pp_dif_type_s`) as subglottic suction events increase from 5 to 10, and by `r pvap_5_15_pp_dif` (`r pvap_5_15_pp_dif_type_s`) as events increase from 5 to 15.  
   
 
@@ -708,9 +709,11 @@ The observed association between sputum quantity and VAE risk prompted us to exa
   
   
 ### Discussion  
-Using a case-crossover design, we investigated the relationship between sputum production during mechanical ventilation and adverse ventilator-associated events (VAE) with the goal of understanding whether sputum quantity reflects underlying lung disease that will result in increased oxygen (FiO2 and PEEP) requirement. We quantified sputum production as the number of subglottic suction events per calendar day; we categorized VAE using the CDC's NHSN definitions of VAC and IVAC. In this cohort of medical intensive care patients with VAE, sputum quantity was associated with both IVAC and VAC. Though the association with IVAC was stronger, sputum quantity did not discriminate well between infection-associated and non-infectious VAE. Secondary analyses revealed other clinical variables, prominently AST and ALT, that better discriminated IVAC from VAC in this cohort.         
+Using a case-crossover design, we investigated the relationship between sputum production during mechanical ventilation, measured by subglottic suction frequency, and adverse ventilator-associated events (VAE) with the goal of understanding whether sputum quantity reliably reflects underlying lung disease that will result in increased oxygen (FiO2 and PEEP) requirement. We quantified sputum production as the number of subglottic suction events per calendar day, and we categorized VAE using the CDC's NHSN definitions of VAC and IVAC. In this cohort of medical intensive care patients with VAE, sputum quantity measured by subglottic suction frequency was associated with both IVAC and VAC. Though the association with IVAC was stronger, sputum quantity did not discriminate well between infection-associated and non-infectious VAE. Secondary analyses revealed other variables, prominently AST and ALT, that better discriminated IVAC from VAC in this cohort.         
   
-The relationship between sputum quantity and VAE is of interest because sputum quantity is often clinically interpreted as a sign of VA-LRTI, and the relationship between VAE and VA-LRTI remains unclear [@Fan2016-np; @Klompas2014-uv; @Ramirez-Estrada2018-bf; @Stevens2014-zg]. The finding that sputum quantity is higher at the time of VAE and immediately before VAE, relative to the earlier pre-VAE period, validates sputum quantity as a physical examination sign associated with risk for worsening respiratory failure. However, sputum quantity did not discriminate well between IVAC and VAC. Greater sputum quantity was associated with VAC without fever or leukocytosis, as well as with IVAC. There are several possible explanations for the discordance between sputum quantity and the NHSN criteria used to discriminate infection-associated adverse events. One possible explanation is that the number of subglottic suction events does not reliably represent the quantity of sputum produced; misclassification of sputum production may result in poor discrimination between IVAC and VAC. Another possible explanation is that NHSN IVAC criteria, which are known to exclude a large proportion of clinically diagnosed VA-LRTI [@Klompas2019-tt], exclude true VA-LRTI events that would drive a stronger association with sputum quantity. A third possible explanation is that sputum production, though commonly interpreted as a sign of infection, is nonspecific, or that sputum quality (e.g., purulence) is more specific than sputum quantity.  
+The relationship between sputum quantity and VAE is of interest because sputum quantity is often clinically interpreted as a sign of VA-LRTI, and the relationship between VAE and VA-LRTI remains unclear [@Fan2016-np; @Klompas2014-uv; @Ramirez-Estrada2018-bf; @Stevens2014-zg]. The finding that sputum quantity, measured by subglottic suction frequency, is higher at the time of VAE and immediately before VAE, relative to the earlier pre-VAE period, validates sputum quantity as a physical examination sign associated with risk for worsening respiratory failure. However, sputum quantity did not discriminate well between IVAC and VAC. Greater sputum quantity was associated with VAC without fever or leukocytosis, as well as with IVAC.  
+  
+There are several possible explanations for the discordance between sputum quantity and the NHSN criteria used to discriminate infection-associated adverse events. One possible explanation is that the number of subglottic suction events does not consistently represent the quantity of sputum produced. Misclassification of sputum production could result in poor discrimination between IVAC and VAC. Another possible explanation is that NHSN IVAC criteria, which are known to exclude a large proportion of clinically diagnosed VA-LRTI [@Klompas2019-tt], exclude true VA-LRTI events that would drive a stronger association with sputum quantity. A third possible explanation is that sputum production, though commonly interpreted as a clinical sign of infection, is nonspecific, or that sputum quality (e.g., purulence) is more specific than sputum quantity.  
   
 Several limitations of our study must be noted. The case-crossover design was chosen because VAE are rare outcomes, and the exposure of interest -- sputum quantity -- is dynamic and most likely to impact VAE risk acutely. However, our exclusive focus on VAE cases leaves open important questions about the generalizability of our findings across the broader population of patients who depend upon mechanical ventilation. Likewise, our cohort was enrolled from the medical intensive care unit of a single, academic medical center. Sputum quantity may differ significantly in surgical, neurological, or pediatric intensive care patients, and practices for management of tracheal secretions may differ across institutions. Our findings must be validated with studies of sputum quantity across a broader population of patients dependent on mechanical ventilation.   
   
