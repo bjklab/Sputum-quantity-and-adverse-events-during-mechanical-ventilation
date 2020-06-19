@@ -78,11 +78,13 @@ DP - data collection; manuscript preparation;
 RF - data collection; manuscript preparation;  
 BJK - data collection; data analysis; manuscript preparation  
   
+## Word Count
+  
 ## Acknowledgements  
 BJK is supported by the National Institute for Allergy and Infectious Diseases (K23 AI121485 and L30 AI120149), as well as Centers for Disease Control and Prevention (CDC) contract awards (BAA 200-2016-91964 and 200-2018-02919). BJK and DP are supported by the CDC Healthcare-Associated Infection Prevention Epicenters Program (U54CK000485). All authors report no conflicts of interest relevant to this article. There are no relevant disclosures.  
   
 ## Data Availability  
-Deidentified data, as well as analysis scripts and model code are available at github.com/bjkellyio.  
+Deidentified data, as well as analysis scripts and model code are available at github.com/bjklab.  
   
 ## Keywords  
 ventilator-associated complications, ventilator-associated pneumonia, subglottic suction  
