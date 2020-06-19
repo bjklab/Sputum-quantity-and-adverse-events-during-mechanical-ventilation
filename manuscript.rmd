@@ -105,7 +105,7 @@ Tracheal intubation and mechanical ventilation provide essential support for pat
 We performed a case-crossover study including 87 patients with VAE and evaluated 848 days in the pre-VAE period at risk for VAE.  
   
 #### Setting & Participants  
-Subjects were recruited from the medical intensive care unit of an academic medical center.  
+Critically ill subjects were recruited from the medical intensive care unit of an academic medical center.  
   
 #### Methods  
 We used the number of as-needed subglottic suctioning events performed per calendar day to quantify sputum production and compared the immediate pre-VAE period to the preceding period. We used CDC surveillance definitions for VAE and to categorize whether events were infection-associated or not.  
