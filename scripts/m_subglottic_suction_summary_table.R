@@ -25,24 +25,15 @@ lm_colors <- colorspace::sequential_hcl(5, palette = "Grays")
 #' ##########################################################################
 #' ##########################################################################
 
-d <- read_csv("./data/vae_cohort_combined.csv.gz")
-d
+d_binomial_sameday <- read_csv(file = "./models/binomial/d_binomial_sameday.csv")
+d_binomial_sameday
 
-
-
-d %>%
+d_binomial_sameday %>%
   group_by(subject_id) %>%
-  mutate(vae_date_rel = unique(as.numeric(vae_date - vent_date) + 1),
-  ) %>%
+  mutate(vae_type = ifelse(sum(pvap_yn) > 0, "PVAP", ifelse(sum(ivac_yn) > 0, "IVAC", "VAC"))) %>%
   ungroup() %>%
-  filter(d_rel_vae <= 0) %>% # only include timepoints up until VAE
-  filter(vent_on == TRUE) %>% # only include time on ventilator
-  filter(d_rel_vent > 1) %>% # can't have VAE on first two days on ventilator
-  distinct() -> d_vae
-
+  identity() -> d_vae
 d_vae
-
-
 
 
 #' ##########################################################################
@@ -57,7 +48,7 @@ d_vae %>%
   select(subject_id, d_rel_vae, vae_type, ss_daily_total) %>%
   filter(d_rel_vae <= 0) %>%
   filter(!is.na(ss_daily_total)) %>%
-  mutate(vae_type = replace(vae_type, vae_type %in% c("POVAP","PRVAP","PVAP"), "PVAP")) %>%
+  #mutate(vae_type = replace(vae_type, vae_type %in% c("POVAP","PRVAP","PVAP"), "PVAP")) %>%
   mutate(day_definition = case_when(d_rel_vae == 0 ~ "Day of VAE",
                                     d_rel_vae == -1 ~ "1 Day Before VAE",
                                     d_rel_vae == -2 ~ "2 Days Before VAE",
@@ -73,10 +64,10 @@ d_vae %>%
   gtsummary::modify_header(label ~ "**Time Relative to VAE**") -> stab_time
 stab_time
 
-stab_time %>%
-  gtsummary::as_gt() %>%
-  gt::as_raw_html() %>%
-  write_lines(file = "./tabs/st1_time.html")
+# stab_time %>%
+#   gtsummary::as_gt() %>%
+#   gt::as_raw_html() %>%
+#   write_lines(file = "./tabs/st1_time.html")
 
 
 
@@ -86,7 +77,7 @@ d_vae %>%
   select(subject_id, d_rel_vae, vae_type, ss_daily_total) %>%
   filter(d_rel_vae <= 0) %>%
   filter(!is.na(ss_daily_total)) %>%
-  mutate(vae_type = replace(vae_type, vae_type %in% c("POVAP","PRVAP","PVAP"), "PVAP")) %>%
+  #mutate(vae_type = replace(vae_type, vae_type %in% c("POVAP","PRVAP","PVAP"), "PVAP")) %>%
   mutate(day_definition = case_when(d_rel_vae == 0 ~ "Day of VAE",
                                     d_rel_vae == -1 ~ "1 Day Before VAE",
                                     d_rel_vae == -2 ~ "2 Days Before VAE",
@@ -104,10 +95,10 @@ d_vae %>%
   identity() -> stab_simple
 stab_simple
 
-stab_simple %>%
-  gtsummary::as_gt() %>%
-  gt::as_raw_html() %>%
-  write_lines(file = "./tabs/st1_simple.html")
+# stab_simple %>%
+#   gtsummary::as_gt() %>%
+#   gt::as_raw_html() %>%
+#   write_lines(file = "./tabs/st1_simple.html")
 
 
 
@@ -117,7 +108,7 @@ d_vae %>%
   select(subject_id, d_rel_vae, vae_type, ss_daily_total) %>%
   filter(d_rel_vae <= 0) %>%
   filter(!is.na(ss_daily_total)) %>%
-  mutate(vae_type = replace(vae_type, vae_type %in% c("POVAP","PRVAP","PVAP"), "PVAP")) %>%
+  #mutate(vae_type = replace(vae_type, vae_type %in% c("POVAP","PRVAP","PVAP"), "PVAP")) %>%
   mutate(day_definition = case_when(d_rel_vae == 0 ~ "Day of VAE",
                                     d_rel_vae == -1 ~ "1 Day Before VAE",
                                     d_rel_vae == -2 ~ "2 Days Before VAE",
@@ -133,10 +124,10 @@ d_vae %>%
   gtsummary::modify_header(label ~ "**VAE Type**") -> stab_type
 stab_type
 
-stab_type %>%
-  gtsummary::as_gt() %>%
-  gt::as_raw_html() %>%
-  write_lines(file = "./tabs/st1_type.html")
+# stab_type %>%
+#   gtsummary::as_gt() %>%
+#   gt::as_raw_html() %>%
+#   write_lines(file = "./tabs/st1_type.html")
 
 
 
